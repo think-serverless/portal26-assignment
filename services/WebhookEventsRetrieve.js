@@ -57,7 +57,7 @@ const queryFomationEvents = (tenantName, querystring) => {
       };
     } else if (querystring.url) {
       params = {
-        KeyConditionExpression: "tenant = :tenant AND url = :url",
+        KeyConditionExpression: "tenant = :tenant AND urlName = :url",
         ExpressionAttributeValues: {
           ":tenant": tenantName,
           ":url": querystring.url,

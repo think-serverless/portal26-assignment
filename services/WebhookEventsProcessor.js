@@ -42,7 +42,7 @@ const getEventsItemPutParams = async (data, tenant) => {
       tenant: tenant,
       event_timestamp: data.event_timestamp,
       user_id: data.user_id,
-      url: data.url,
+      urlName: data.url,
       body: data.body,
       category: categoryLabel,
       CreatedAt: now,
