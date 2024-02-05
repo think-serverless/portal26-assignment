@@ -6,6 +6,7 @@ const dynamo = new AWS.DynamoDB.DocumentClient({
   region: process.env.REGION || "ap-south-1",
 });
 
+//API_KEY and SECRET_KEY - need to be moved to secrets
 const API_KEY = "qz8writfyk91pokAwozw";
 const SECRET_KEY = "hwyZnxQ7munqDzevfBxm";
 
