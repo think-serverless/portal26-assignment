@@ -1,0 +1,19 @@
+service: aws-portal26-assignment
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  profile: abehera-dev
+  region: ap-south-1
+  stage: ${opt:stage, "dev"}
+
+functions:
+  WebhookEventsProcessor:
+    handler: services/WebhookEventsProcessor.handler
+    description: Process webhook events data
+    name: ${self:service}-${self:provider.stage}-WebhookEventsProcessor
+    events:
+      - http:
+          path: v1/webhooks/amazon/events
+          method: post
